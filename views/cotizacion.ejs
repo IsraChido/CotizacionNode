@@ -47,6 +47,18 @@
                 </div>
             </form>
         </center>
+        <%
+            if(valor != 0){
+                pagoInicial = valor * (pInicial/100);
+                totalFin = valor - pagoInicial;
+                pagoMensual = totalFin / plazos;
+            }
+        %>
+        <br>
+        <hr>
+        <h3 class="display-3 font-weight-bold">Resumen de la cotización</h3>
+        <br>
+        <hr>
     </div>
 </body>
 </html>
