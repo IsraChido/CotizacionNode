@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizacion</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <center>
+            <h1 class="display-1 font-weight-bold">Cotización</h1>
+            <form action="/cotizacion" method="post">
+                <div class="form-group">
+                    <label for="">Valor del automovil: </label>
+                    <input type="number" name="valor" id="valor" required value="<%=valor%>">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Porcentaje de pago inicial: </label>
+                    <%
+                        let pagoInicial = 0;
+                        let totalFin = 0;
+                        let pagoMensual = 0;
+                    %>
+                    <select name="pInicial" id="pInicial" class="btn btn-outline-dark">
+                        <option value="10">10%</option>
+                        <option value="20">20%</option>
+                        <option value="30">30%</option>
+                        <option value="50">50%</option>
+                        <option value="70">70%</option>
+                    </select>
+                    <label for="">Plazos: </label>
+                    <select name="plazos" id="plazos" class="btn btn-outline-dark">
+                        <option value="12">12 Meses</option>
+                        <option value="24">24 Meses</option>
+                        <option value="36">36 Meses</option>
+                        <option value="48">48 Meses</option>
+                        <option value="60">60 Meses</option>
+                        <option value="72">72 Meses</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" onclick="valores()" class="btn btn-outline-primary">Enviar</button>
+                </div>
+            </form>
+        </center>
+    </div>
+</body>
+</html>
