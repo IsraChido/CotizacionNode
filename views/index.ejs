@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 01 EJS </title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<style>
+    tr{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    td{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+    
+    img{
+        max-width: 200px;
+        max-height: 200px;
+    }
+</style>
+<body class="bg-light">
+    <div class="container-fluid">
+        <center>
+            <h1 class="display-1 font-weight-bold"><%=titulo%></h1>
+            <img class="image-thumbnail" src="./img/upsin_512.png" alt="">
+        </center>
+        <hr>
+        <table class="table table-light table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Matricula</th>
+                    <th>Nombre</th>
+                    <th>Sexo</th>
+                    <th>Materias</th>
+                </tr>
+            </thead>
+            <% for(alumno of listado){ %>
+            <tr>
+                <td><%=alumno.matricula%></td>
+                <td><%=alumno.nombre%></td>
+                <td><%=alumno.sexo%></td>
+                <td><%=alumno.materias%></td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</body>
+</html>

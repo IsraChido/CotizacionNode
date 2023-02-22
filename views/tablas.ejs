@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas de multiplicar</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <h1>Tabla de Multiplicar</h1>
+        <form action="/tablas" method="post">
+            Numero Tabla : <input type="number" id="tabla" name="tabla" required value="<%=tabla%>">
+            <button type="submit">Enviar</button>
+        </form>
+        <%
+            if(tabla != null){
+                let res = 0;
+                for(con = 1; con <= 10; ++con){
+                    res = con * tabla;
+                    %>
+                    <h3><%=tabla%> * <%=con%> = <%=res%></h3>
+                    <%
+                }
+            }
+        %>
+    </div>
+</body>
+</html>
